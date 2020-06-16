@@ -1,8 +1,11 @@
 
+/* General styling */
 html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.1rem;
 }
+
+/* Layout */
 .main-container {
     margin-left: auto;
     margin-right: auto;
@@ -15,40 +18,72 @@ html {
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
+header, footer, nav, article {
+    /*margin: 20px;*/
+    padding: 15px;
+    background-color: lightgray;
+}
+aside {
+    background-color: lightblue;
+    padding: 15px;
+}
+
+
+/* Headings */
 h1 {
     font-size: 3rem;
 }
 h2 {
     font-size: 2rem;
 }
+
+/* Navigation */
 nav li {
     display: inline-block
 }
 nav ul {
     padding: 0
 }
-header, footer, nav, article {
-    /*margin: 20px;*/
+nav a {
+    /*margin-right: 15px;*/
     padding: 15px;
-    background-color: lightgray;
 }
+nav a:hover {
+    text-decoration: none;
+    background-color: white;
+}
+#navigation {
+    background-color: lightblue
+}
+@media screen and (max-width: 600px) {
+    nav li {
+        display: block;
+        margin: 20px 0;
+    }
+    nav li {
+        border-bottom: 1px solid black;
+    }
+}
+
+/* Header */
 header {
     height: 100px;
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+
+/* Footer */
 .footer-container {
     display: flex;
 }
 .footer-box {
     flex: 1
 }
+
+/* Links */
 a, a:hover, a:visited, a:active {
     color: inherit;
-    text-decoration: none;
-}
-nav a {
-    margin-right: 15px;
+    text-decoration: none; /* Remove underline for links */
 }
 a:hover {
     text-decoration: underline;
@@ -56,10 +91,4 @@ a:hover {
 a.active {
     font-weight: bold;
 }
-#navigation {
-    background-color: lightblue
-}
-aside {
-    background-color: lightblue;
-    padding: 15px;
-}
+
