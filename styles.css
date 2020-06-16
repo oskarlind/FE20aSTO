@@ -8,6 +8,12 @@ html {
     margin-right: auto;
     width: 100%;
     max-width: 85rem;
+    display: grid;
+    grid-row-gap: 10px;
+}
+#main-content-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 h1 {
     font-size: 3rem;
@@ -22,9 +28,14 @@ nav ul {
     padding: 0
 }
 header, footer, nav, article {
-    margin: 20px;
+    /*margin: 20px;*/
     padding: 15px;
     background-color: lightgray;
+}
+header {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 .footer-container {
     display: flex;
@@ -47,4 +58,8 @@ a.active {
 }
 #navigation {
     background-color: lightblue
+}
+aside {
+    background-color: lightblue;
+    padding: 15px;
 }
