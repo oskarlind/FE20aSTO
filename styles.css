@@ -4,6 +4,33 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.1rem;
 }
+:root {
+    --primary-color: #1A8E75;
+    --secondary-color: #67CBC1;
+    --primary-light-color: #F6F4E5;
+    --maybe-use-this-later-color: #DA8C48;
+    --alert-color: #B55750;
+}
+body {
+    background-color: var(--primary-color);
+}
+
+/* Forms */
+input:valid {
+    border: 1px solid var(--primary-color);
+}
+input:invalid {
+    border: 1px solid var(--alert-color);
+}
+input[type="text"], input[type="tel"], input[type="email"], select, input[type="submit"] {
+    padding: 10px;
+    display: block;
+    margin: 15px 0;
+}
+form::after {
+    content: '🍏';
+    display: block;
+}
 
 /* Layout */
 .main-container {
@@ -58,10 +85,23 @@ nav a:hover {
 @media screen and (max-width: 600px) {
     nav li {
         display: block;
-        margin: 20px 0;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--primary-light-color);
     }
-    nav li {
-        border-bottom: 1px solid black;
+    nav li:last-child {
+        border-bottom: none;
+    }
+    .logo-container {
+        display: none;
+    }
+    header {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        grid-template-columns: 1fr 2fr;
     }
 }
 
