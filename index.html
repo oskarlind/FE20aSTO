@@ -33,6 +33,24 @@
         </nav>
         <article id="main-content-container">
             <div id="main-content">
+                <form method="GET" action="index.html">
+                    <input id="firstname" name="First name" type="text" required placeholder="First name">
+                    <input id="lastname" name="Last name" type="text" required placeholder="Last name">
+                    <input name="phone" type="tel" placeholder="Phone number (+4670...)" pattern="^([+]46)\s*(7[0236])\s*(\d{4})\s*(\d{3})$">
+                    <input name="email" type="email" placeholder="Email" required>
+                    <label for="contactChoice1">Email</label>
+                    <input type="radio" id="contactChoice1" name="contact" value="email">
+                    <label for="contactChoice2">Phone</label><br>
+                    <input type="radio" id="contactChoice2" name="contact" value="phone">
+                    <label for="giftwrap">Gift Wrap</label>
+                    <input id="giftwrap" name="Gift wrap" type="checkbox">
+                
+                    <select id="shipment" name="Shipment type">
+                        <option name="postnord">Postnord</option>
+                        <option name="dhl">DHL</option>
+                    </select>
+                    <input type="submit">
+                </form>
                 <h1>Andy's Fruit</h1>
                 <p><span style="color: red">Welcome</span> to Andy's fruit shop. There are some
                     <strong>nice apples</strong> here which you can buy for a <em>very&nbsp;good</em>
