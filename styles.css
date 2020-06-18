@@ -1,15 +1,17 @@
 
 /* General styling */
-html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.1rem;
-}
 :root {
     --primary-color: #1A8E75;
     --secondary-color: #67CBC1;
     --primary-light-color: #F6F4E5;
     --maybe-use-this-later-color: #DA8C48;
     --alert-color: #B55750;
+    --standard-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --standard-font-size: 1.1rem;
+}
+html {
+    font-family: var(--standard-font-family);
+    font-size: var(--standard-font-size);
 }
 body {
     background-color: var(--primary-color);
@@ -30,6 +32,32 @@ input[type="text"], input[type="tel"], input[type="email"], select, input[type="
 form::after {
     content: '🍏';
     display: block;
+}
+form[name="contact-us"] textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-family: var(--standard-font-family);
+    font-size: var(--standard-font-size);
+}
+form[name="contact-us"] input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Search box */
+input[type="search"] {
+    border-radius: 11px;
+    padding: 20px 20px 20px 50px;
+    font-family: var(--standard-font-family);
+    font-size: var(--standard-font-size);
+    border: 2px solid var(--primary-color);
+    width: 100%;
+    background-image: url('./zoom.svg');
+    background-repeat: no-repeat;
+    background-size: 22px auto;
+    background-position: 15px 50%;
 }
 
 /* Layout */
