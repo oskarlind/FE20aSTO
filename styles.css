@@ -123,21 +123,32 @@ nav a:hover {
         display: none;
     }
     header {
-        grid-template-columns: 1fr;
+        grid-template-columns: none;
     }
+    #icons-container {
+        flex-direction: column;
+    }
+    #main-content-container {
+        grid-template-columns: none; /* Move sidebar below main content area */
+    }
+
 }
 
 @media screen and (min-width: 600px) {
     header {
         grid-template-columns: 1fr 2fr;
     }
+    
 }
 
 /* Header */
 header {
     height: 100px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    background: url("./apples_bg.jpg") 0 0 no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
 }
 
 /* Footer */
@@ -146,6 +157,32 @@ header {
 }
 .footer-box {
     flex: 1
+}
+
+/* Icons */
+#icons-container {
+    display: flex;
+    border-top: 1px solid black;
+    margin: 50px 0;
+    padding: 50px 10px;
+}
+.icon-card:nth-child(1) {
+    background-image: url('./001-watermelon.svg');
+}
+.icon-card:nth-child(2) {
+    background-image: url('./002-orange.svg');
+}
+.icon-card:nth-child(3) {
+    background-image: url('./003-strawberry.svg');
+}
+.icon-card {
+    flex: 1;
+    height: 50px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px auto;
+    padding-top: 50px;
 }
 
 /* Links */
