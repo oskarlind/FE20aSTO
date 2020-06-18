@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <title>Contact us</title>
+    <meta name="description" content="This webpage is about apples and pears">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- This is the css reference file -->
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <section class="main-container">
+        <header>
+            <div class="logo-container">
+                <a href="https://en.wikipedia.org/wiki/Apple">
+                    <picture>
+                        <source media="(min-width: 1000px)" srcset="./apple-1024px.jpg">
+                        <img style="max-height: 100px" src="apple-640px.jpg" alt="Apple" title="A nice apple">
+                    </picture>
+                </a>
+            </div>
+            <div class="search-container"><input type="search" placeholder="Sök efter recept..."/></div>
+        </header>
+        <nav id="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="contact.html">Contact us</a></li>
+                <li><a href="recipies.html">Recipies</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+        <article id="main-content-container">
+            <div id="main-content">
+                <h1>Contact us</h1>
+                <p>Please get in touch by using the form below!</p>
+                <form name="contact-us" method="GET" action="index.html">
+                    <label for="customername">Your name:</label><br>
+                    <input id="customername" name="customername" type="text" required autofocus>
+                    <label for="email">Email:</label><br>
+                    <input id="email" name="email" type="email" required>
+                    <label for="message">Your message:</label><br>
+                    <textarea id="message" name="message" maxlength="1000"></textarea>
+                    <input type="submit" value="Send message">
+                </form>
+            </div>
+        </article>
+        <footer class="footer-container">
+            <div class="footer-box">&copy; Oskar Lind 2020</div>
+            <div class="footer-box">Location: <br>Kungsgatan 1<br>11145 Stockholm</div>
+            <div class="footer-box">Please follow us on Facebook, Twitter and Instagram</div>
+        </footer>
+    </section>
+</body>
+
+</html>
