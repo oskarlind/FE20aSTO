@@ -68,6 +68,14 @@
             <p>Pears have a <em>weird</em> shape but are nice nonetheless.</p>
         </article>
         <article>
+            <h2>Recipes</h2>
+            <div id="recipe1">Apple Pie</div>
+            <div id="recipe2" style="display: none;">Blueberry cake</div>
+            <div id="recipe3" style="display: none;">Strawberry smoothie</div>
+            <button id="prev" onclick="prevRecipe()">Previous</button>
+            <button id="next" onclick="nextRecipe()">Next</button>
+        </article>
+        <article>
             <h3>Recent harvest</h3>
             <p>We have a nice new batch of apples ready.</p>
             <a title="Read more about apples!" target="_blank" href="https://en.wikipedia.org/wiki/Apple">Read more about apples here</a>
@@ -78,6 +86,35 @@
             <div class="footer-box">Please follow us on Facebook, Twitter and Instagram</div>
         </footer>
     </section>
+    <script type="text/javascript">
+        let alertMessage = (message) => {
+            alert(message);
+        }
+
+        let multiplyIngredient = (original, factor) => {
+            let result;
+            if(original > 0) {
+                result = original * factor;
+            } else {
+                result = original;
+            }
+            alertMessage("Some went wrong, please try again.");
+            return result;
+        }
+        
+        let currentRecipe = 1;
+        let nextRecipe = () => {
+            document.getElementById("recipe"+currentRecipe).style.display = "none";
+            document.getElementById("recipe"+(currentRecipe+1)).style.display = "block";
+            currentRecipe++;
+        }
+
+        let prevRecipe = () => {
+            document.getElementById("recipe"+currentRecipe).style.display = "none";
+            document.getElementById("recipe"+(currentRecipe-1)).style.display = "block";
+            currentRecipe--;
+        }
+    </script>
 </body>
 
 </html>
