@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <title>🍏Andy's Fruit</title>
+    <meta name="description" content="This webpage is about apples and pears">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- This is the css reference file -->
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="js/scripts.js"></script>
+    <script src="js/utils.js"></script>
+</head>
+
+<body>
+    <section class="main-container">
+        <header>
+            <div class="logo-container">
+                <a href="https://en.wikipedia.org/wiki/Apple">
+                    <picture>
+                        <source media="(min-width: 1000px)" srcset="./apple-1024px.jpg">
+                        <img style="max-height: 100px" src="apple-640px.jpg" alt="Apple" title="A nice apple">
+                    </picture>
+                </a>
+            </div>
+            <div class="search-container"><input type="search" placeholder="Search our website..."/></div>
+        </header>
+        <nav id="navigation">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="recipies.html">Recipies</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+        <article id="main-content-container">
+            <div id="main-content">
+                <h1>Recipes</h1>
+                <h2>Apple pie</h2>
+                <table>
+                    <tr>
+                        <td>Apples</td>
+                        <td id="apples"></td>
+                        <td>pcs</td>
+                    </tr>
+                    <tr>
+                        <td>Flour</td>
+                        <td id="flour"></td>
+                        <td>grams</td>
+                    </tr>
+                    <tr>
+                        <td>Butter</td>
+                        <td id="butter"></td>
+                        <td>grams</td>
+                    </tr>
+            </table>
+            <script type="text/javascript">
+                let multiplier = 2;
+                document.getElementById("apples").innerHTML = calculateQuantity(10, multiplier);
+                document.getElementById("flour").innerHTML = calculateQuantity(400, multiplier);
+                document.getElementById("butter").innerHTML = calculateQuantity(200, multiplier);
+            </script>
+            </div>
+            <aside>
+                <b>Opening hours</b>
+                <ul>
+                    <li>Mon-fri: 8am-5pm</li> 
+                    <li>Sat: 9am-5pm</li>
+                    <li>Sun: Closed</li>
+                </ul>
+                <b>Location</b><br>
+                <a href="#">Find us on google maps</a><br>
+                <b>Telephone</b><br>
+                <a href="tel:1-562-867-5309">Give us a call</a><br>
+                <b>Email</b><br>
+                <a href="mailto:oskar.lind@gmail.com">Send us an email</a>
+            </aside>
+        </article>
+        <article>
+            <h2 id="pears">Pears</h2>
+            <p>Pears have a <em>weird</em> shape but are nice nonetheless.</p>
+        </article>
+        <article>
+            <h2>Recipes</h2>
+            <div id="recipe1">Apple Pie</div>
+            <div id="recipe2" style="display: none;">Blueberry cake</div>
+            <div id="recipe3" style="display: none;">Strawberry smoothie</div>
+            <button id="prev" onclick="prevRecipe()">Previous</button>
+            <button id="next" onclick="nextRecipe()">Next</button>
+        </article>
+        <article>
+            <h3>Recent harvest</h3>
+            <p>We have a nice new batch of apples ready.</p>
+            <a title="Read more about apples!" target="_blank" href="https://en.wikipedia.org/wiki/Apple">Read more about apples here</a>
+        </article>
+        <footer class="footer-container">
+            <div class="footer-box">&copy; Oskar Lind 2020</div>
+            <div class="footer-box">Location: <br>Kungsgatan 1<br>11145 Stockholm</div>
+            <div class="footer-box">Please follow us on Facebook, Twitter and Instagram</div>
+        </footer>
+    </section>
+</body>
+
+</html>
