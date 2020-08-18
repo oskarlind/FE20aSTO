@@ -36,6 +36,17 @@
         <article id="main-content-container">
             <div id="main-content">
                 <h1>Recipes</h1>
+                <h2>Available recipes</h2>
+                <div id="availableRecipes"></div>
+                <script type="text/javascript">
+                    function renderRecipes(item, index) {
+                        document.getElementById("availableRecipes").innerHTML += item.title;
+                        document.getElementById("availableRecipes").innerHTML += item.ingredients;
+                        document.getElementById("availableRecipes").innerHTML += "<br>";
+                    }
+                    recipes.forEach(renderRecipes);
+                    //document.getElementById("availableRecipes").innerHTML = recipes;
+                </script>
                 <h2>Apple pie</h2>
                 <table>
                     <tr>
