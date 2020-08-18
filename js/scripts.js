@@ -27,3 +27,25 @@ let calculateQuantity = function(originalAmount, multiplier) {
     result += multiply(originalAmount);
     return result;
 }
+
+/**
+ * Constructor for Car model
+ */
+function Car(year, make, color) {
+    this.year = year;
+    this.make = make;
+    this.color = color;
+}
+let car1 = new Car(1991, "VW", "red");
+let car2 = new Car(1997, "Fiat", "yellow");
+
+/**
+ * Recipe constructor
+ */
+function Recipe(title, ingredients) {
+    this.title = title;
+    this.ingredients = ingredients;
+}
+let applePie = new Recipe("Apple pie", ["Apples", "Flour", "Butter"]);
+let blueberrySmoothie = new Recipe("Blueberry smoothie", ["Bluberries", "Sugar"]);
+const recipes = [applePie, blueberrySmoothie];
