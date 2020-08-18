@@ -3,11 +3,13 @@
 <html lang="en-us">
 
 <head>
-    <title>Andy's Fruit</title>
+    <title>🍏Andy's Fruit</title>
     <meta name="description" content="This webpage is about apples and pears">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- This is the css reference file -->
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="js/scripts.js"></script>
+    <script src="js/utils.js"></script>
 </head>
 
 <body>
@@ -21,9 +23,7 @@
                     </picture>
                 </a>
             </div>
-            <div class="search-container">
-                <input type="search" placeholder="Sök efter recept..."/>
-            </div>
+            <div class="search-container"><input type="search" placeholder="Search our website..."/></div>
         </header>
         <nav id="navigation">
             <ul>
@@ -35,9 +35,11 @@
         </nav>
         <article id="main-content-container">
             <div id="main-content">
+                <div id="message">
+
+                </div>
                 <h1>Andy's Fruit</h1>
-                <img style="max-height: 100px" src="apple-640px.jpg" alt="Apple" title="A nice apple">
-                <p><span style="color: red">Welcome</span> to Andy's fruit shop. There are some
+                <img style="max-height: 100px" src="apple-640px.jpg" alt="Apple" title="A nice apple"><p><span style="color: red">Welcome</span> to Andy's fruit shop. There are some
                     <strong>nice apples</strong> here which you can buy for a <em>very&nbsp;good</em>
                     price.</p>
                 <h2 id="apples">Apples</h2>
@@ -101,18 +103,7 @@
             alertMessage("Some went wrong, please try again.");
             return result;
         }
-        
-        let currentRecipe = 1;
-        let nextRecipe = () => {
-            document.getElementById("recipe"+currentRecipe).style.display = "none";
-            document.getElementById("recipe"+(currentRecipe+1)).style.display = "block";
-            currentRecipe++;
-        }
-        let prevRecipe = () => {
-            document.getElementById("recipe"+currentRecipe).style.display = "none";
-            document.getElementById("recipe"+(currentRecipe-1)).style.display = "block";
-            currentRecipe--;
-        }
+
     </script>
 </body>
 
