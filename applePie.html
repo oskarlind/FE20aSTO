@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <title>🍏Andy's Fruit</title>
+    <meta name="description" content="This webpage is about apples and pears">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- This is the css reference file -->
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="js/scripts.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+</head>
+
+<body>
+    <section class="main-container">
+        <header>
+            <div class="logo-container">
+                <a href="https://en.wikipedia.org/wiki/Apple">
+                    <picture>
+                        <source media="(min-width: 1000px)" srcset="./apple-1024px.jpg">
+                        <img style="max-height: 100px" src="apple-640px.jpg" alt="Apple" title="A nice apple">
+                    </picture>
+                </a>
+            </div>
+            <div class="search-container"><input type="search" placeholder="Search our website..."/></div>
+        </header>
+        <nav id="navigation">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="recipies.html">Recipies</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+        <article id="main-content-container">
+            <div id="main-content">
+                <img id="main-image" src="" alt="Apple pie" style="display: none";>
+                <h1 id="title"></h1>
+                <div id="description"></div>
+                <h2>Ingredients</h2>
+                <ul id="ingredients"></ul>
+                <h2>Instructions</h2>
+                <div id="instructions"></div>
+            </div>
+            <script type="text/javascript">
+                fetchRecipes("Apple pie")
+                    .then(res => fetchRecipe(res.results[0].id))
+                    .then(res => renderRecipe(res))
+                
+                var renderRecipe = (recipe) => {
+                    this.document.getElementById("title").innerHTML = recipe.title;
+                    this.document.getElementById("main-image").setAttribute("src", recipe.image);
+                    this.document.getElementById("main-image").style.display = "block";
+                    this.document.getElementById("description").innerHTML = recipe.summary;
+                    this.document.getElementById("instructions").innerHTML = recipe.instructions;
+                    recipe.extendedIngredients.forEach(renderIngredient);
+                }
+
+                var renderIngredient = (ingredient) => {
+                    this.document.getElementById("ingredients").innerHTML += '<li>'+ingredient.name+ ' ('+ingredient.measures.metric.amount+' '+ingredient.measures.metric.unitShort+') <button onclick="addIngredientToList(\''+ingredient.name+'\')">Add to list</button></li>'
+                }
+            </script>
+            <aside>
+                <b>Opening hours</b>
+                <ul>
+                    <li>Mon-fri: 8am-5pm</li> 
+                    <li>Sat: 9am-5pm</li>
+                    <li>Sun: Closed</li>
+                </ul>
+                <b>Location</b><br>
+                <a href="#">Find us on google maps</a><br>
+                <b>Telephone</b><br>
+                <a href="tel:1-562-867-5309">Give us a call</a><br>
+                <b>Email</b><br>
+                <a href="mailto:oskar.lind@gmail.com">Send us an email</a>
+                <h2>Purchase list</h2>
+                <ul id="purchaseListContainer"></ul>
+                <button onclick="clearPurchaseList()">Clear list</button>
+            </aside>
+        </article>
+        
+       
+        
+        <footer class="footer-container">
+            <div class="footer-box">&copy; Oskar Lind 2020</div>
+            <div class="footer-box">Location: <br>Kungsgatan 1<br>11145 Stockholm</div>
+            <div class="footer-box">Please follow us on Facebook, Twitter and Instagram</div>
+        </footer>
+    </section>
+</body>
+
+</html>
