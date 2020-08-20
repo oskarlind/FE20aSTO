@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- This is the css reference file -->
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="js/scripts.js"></script>
     <script src="js/utils.js"></script>
 </head>
 
 <body>
+
     <section class="main-container">
         <header>
             <div class="logo-container">
@@ -35,43 +35,8 @@
         </nav>
         <article id="main-content-container">
             <div id="main-content">
+                <div id="message"></div>
                 <h1>Recipes</h1>
-                <h2>Available recipes</h2>
-                <div id="availableRecipes"></div>
-                <script type="text/javascript">
-                    function renderRecipes(item, index) {
-                        document.getElementById("availableRecipes").innerHTML += item.title;
-                        document.getElementById("availableRecipes").innerHTML += item.ingredients;
-                        document.getElementById("availableRecipes").innerHTML += "<br>";
-                    }
-                    recipes.forEach(renderRecipes);
-                    //document.getElementById("availableRecipes").innerHTML = recipes;
-                </script>
-                <button id="removeLast" onclick="removeLastRecipe()">Remove last recipe</button>
-                <h2>Apple pie</h2>
-                <table>
-                    <tr>
-                        <td>Apples</td>
-                        <td id="apples"></td>
-                        <td>pcs</td>
-                    </tr>
-                    <tr>
-                        <td>Flour</td>
-                        <td id="flour"></td>
-                        <td>grams</td>
-                    </tr>
-                    <tr>
-                        <td>Butter</td>
-                        <td id="butter"></td>
-                        <td>grams</td>
-                    </tr>
-            </table>
-            <script type="text/javascript">
-                let multiplier = 2;
-                document.getElementById("apples").innerHTML = calculateQuantity(10, multiplier);
-                document.getElementById("flour").innerHTML = calculateQuantity(400, multiplier);
-                document.getElementById("butter").innerHTML = calculateQuantity(200, multiplier);
-            </script>
             </div>
             <aside>
                 <b>Opening hours</b>
@@ -89,21 +54,7 @@
             </aside>
         </article>
         <article>
-            <h2 id="pears">Pears</h2>
-            <p>Pears have a <em>weird</em> shape but are nice nonetheless.</p>
-        </article>
-        <article>
-            <h2>Recipes</h2>
-            <div id="recipe1">Apple Pie</div>
-            <div id="recipe2" style="display: none;">Blueberry cake</div>
-            <div id="recipe3" style="display: none;">Strawberry smoothie</div>
-            <button id="prev" onclick="prevRecipe()">Previous</button>
-            <button id="next" onclick="nextRecipe()">Next</button>
-        </article>
-        <article>
-            <h3>Recent harvest</h3>
-            <p>We have a nice new batch of apples ready.</p>
-            <a title="Read more about apples!" target="_blank" href="https://en.wikipedia.org/wiki/Apple">Read more about apples here</a>
+
         </article>
         <footer class="footer-container">
             <div class="footer-box">&copy; Oskar Lind 2020</div>
@@ -111,6 +62,19 @@
             <div class="footer-box">Please follow us on Facebook, Twitter and Instagram</div>
         </footer>
     </section>
+    <script type="text/javascript">
+        let currentRecipe = 1;
+        let nextRecipe = () => {
+            document.getElementById("recipe"+currentRecipe).style.display = "none";
+            document.getElementById("recipe"+(currentRecipe+1)).style.display = "block";
+            currentRecipe++;
+        }
+        let prevRecipe = () => {
+            document.getElementById("recipe"+currentRecipe).style.display = "none";
+            document.getElementById("recipe"+(currentRecipe-1)).style.display = "block";
+            currentRecipe--;
+        }
+    </script>
 </body>
 
 </html>
